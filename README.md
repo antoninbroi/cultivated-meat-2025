@@ -11,7 +11,7 @@ Tom Bry-Chevalier, AgroParisTech-INRAE, BETA, Université de Lorraine, Nancy, Fr
 
 Data and code to replicate the results. Software: R for data analysis.
 
-Main Script.R: R script to reproduce the results, including the sensitivity analysis (expected running time: about 10 minutes).
+Main Script.R: R script to reproduce the results, including the sensitivity analysis (expected running time: about 30 minutes).
 
 Util functions.R: the function to calculate AQALYs.
 
