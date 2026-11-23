@@ -4,19 +4,19 @@ animalsData=list()
 #Global parameters
 humanNeurons=24526423164
 
-# Distribution of meat tonnage and animal numbers (derived from Appendix B table 1)
+# Distribution of meat tonnage and animal numbers (derived from Appendix B table 1 and 4)
 
 chicken_meat_tonnes=c(181000000)
 pork_meat_tonnes=c(143000000)
 bovine_meat_tonnes=c(106000000)
 total_meat_tonnes=c(chicken_meat_tonnes + pork_meat_tonnes + bovine_meat_tonnes)
 
-chicken_nbr=c(97779377404)
-pork_nbr=c(1740465142)
-bovine_nbr=c(429062803)
+chicken_nbr=c(98228780151)
+pork_nbr=c(1739953119)
+bovine_nbr=c(421947712)
 
-dairy_bovine_nbr= c(95681005)
-beef_bovine_nbr= c(333381798)
+dairy_bovine_nbr= c(63292157)
+beef_bovine_nbr= c(358655555)
 
 # Pork/chicken distribution in total non-bovine meat production
 chicken_share = chicken_meat_tonnes / (pork_meat_tonnes + chicken_meat_tonnes)
@@ -26,20 +26,20 @@ pork_share = pork_meat_tonnes / (pork_meat_tonnes + chicken_meat_tonnes)
 ### Populations (derived from Appendix B with calculations described in Methods 4)
 # Moderate Intensification
 
-animalsData$chickenIntensive$nbr_moderate=c(97779377404*0.859)
-animalsData$chickenExtensive$nbr_moderate=c(97779377404*(1-0.859))
-animalsData$porkIntensive$nbr_moderate=c(1740465142*0.595)
-animalsData$porkExtensive$nbr_moderate=c(1740465142*(1-0.595))
+animalsData$chickenIntensive$nbr_moderate=c(chicken_nbr*0.859)
+animalsData$chickenExtensive$nbr_moderate=c(chicken_nbr*(1-0.859))
+animalsData$porkIntensive$nbr_moderate=c(pork_nbr*0.595)
+animalsData$porkExtensive$nbr_moderate=c(pork_nbr*(1-0.595))
 animalsData$dairyHerdIntensive$nbr_moderate=c(0)
 animalsData$dairyHerdExtensive$nbr_moderate=c(dairy_bovine_nbr)
 animalsData$beefHerdIntensive$nbr_moderate=c(0)
 animalsData$beefHerdExtensive$nbr_moderate=c(beef_bovine_nbr)
 
 # Severe intensification
-animalsData$chickenIntensive$nbr_severe=c(97779377404*0.999)
-animalsData$chickenExtensive$nbr_severe=c(97779377404*(1-0.999))
-animalsData$porkIntensive$nbr_severe=c(1740465142*0.986)
-animalsData$porkExtensive$nbr_severe=c(1740465142*(1-0.986))
+animalsData$chickenIntensive$nbr_severe=c(chicken_nbr*0.999)
+animalsData$chickenExtensive$nbr_severe=c(chicken_nbr*(1-0.999))
+animalsData$porkIntensive$nbr_severe=c(pork_nbr*0.986)
+animalsData$porkExtensive$nbr_severe=c(pork_nbr*(1-0.986))
 animalsData$dairyHerdIntensive$nbr_severe=c(dairy_bovine_nbr*0.749)
 animalsData$dairyHerdExtensive$nbr_severe=c(dairy_bovine_nbr*(1-0.749))
 animalsData$beefHerdIntensive$nbr_severe=c(beef_bovine_nbr*0.749)

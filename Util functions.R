@@ -7,7 +7,9 @@ computeAQALYs = function(animalsData_funct,
                          psi_funct=1){
   #animalsData_funct: dataset to use
   #killing_penalty: equal to TRUE if we already set up a killing penalty in animalsData_funct
-
+  #ANCIENNE VERSION
+  #if(killing_penalty==FALSE) animalsData_funct=data_with_killing_penalty(animalsData_funct, psi_funct=1, killing_penalty_in_days=0)
+  #NOUVELLE VERSION: J'ai changé le psi_funct=1 en psi_funct=psi_funct
   if(killing_penalty==FALSE) animalsData_funct=data_with_killing_penalty(animalsData_funct, psi_funct=psi_funct, killing_penalty_in_days=0)
   tmp_funct=animalsData_funct %>%
     imap_dfr(~ tibble(

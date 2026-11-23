@@ -8,11 +8,7 @@ data_with_killing_penalty <- function(animalsData_funct, psi_funct=1, killing_pe
 }
 
 # Function to calculate the number of animals in each group for the moderate and severe intensification scenarios.
-data_with_differentiated_animals <- function(animalsData_funct, 
-                                             percentage_integration, 
-                                             percentage_bovine) {
-                                            #percentage_bovine: percentage of allocation of conventional meat tonnage reduction to beef (with the rest among pork and chicken following their respective contribution to tonnage production).    
-  
+data_with_differentiated_animals <- function(animalsData_funct, percentage_integration, percentage_bovine) {
   
   # Meat tonnage
   meat_chicken <- (1 - percentage_bovine) * chicken_share * total_meat_tonnes
@@ -121,8 +117,8 @@ joint_W0_delta=function(modelW0_funct){
   while(bool_funct){
     W0_funct=randomW0(modelW0_funct)
     delta_funct=randomDelta()
-    if(is.na(q_deriv_funct(W0_funct = W0_funct,delta_funct=delta_funct, vp_funct=20))==FALSE){
-      if(q_deriv_funct(W0_funct = W0_funct,delta_funct=delta_funct, vp_funct=20)<=0){
+    if(is.na(q_deriv_funct(W0_funct = W0_funct,delta_funct=delta_funct, vp_funct=20))==FALSE & is.na(q_deriv_funct(W0_funct = W0_funct,delta_funct=delta_funct, vp_funct=0))==FALSE){
+      if(q_deriv_funct(W0_funct = W0_funct,delta_funct=delta_funct, vp_funct=20)<=0 & q_deriv_funct(W0_funct = W0_funct,delta_funct=delta_funct, vp_funct=0)<=0){
         bool_funct=FALSE
       }
     }
